@@ -33,4 +33,34 @@
      count: 7
  */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function correctAdvertisement(wordArrays){
+    changeElementText("#array", "[" + wordArrays.join("],[") + "]");
+    reverseDirection(wordArrays[1]);
+    changeElementText("#words", restructureInputIntoOneLine(wordArrays));
+    changeElementText("#wordCount", "count: " + countWords(wordArrays));
+}
+
+
+function reverseDirection(arrayToReverse){
+    return arrayToReverse.reverse();
+}
+
+function countWords(wordArrays){
+    var numberOfWords = 0;
+    for(var language = 0; language < wordArrays.length; language++){
+        numberOfWords += wordArrays[language].length;
+    }
+    return numberOfWords;
+}
+
+function restructureInputIntoOneLine(wordArrays){
+    var words = [];
+    for(var language = 0; language < wordArrays.length; language++){
+        words = words.concat(wordArrays[language]);
+    }
+    return words.join(" ");
+}
