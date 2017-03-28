@@ -31,7 +31,8 @@ function changeElementText(element, answer) {
 }
 
 function sumCurrency(){
-    var permittedCurrency = [5,10,20,50,100,500];
+    changeElementText("#notes",Array.prototype.slice.call(arguments).join(", "));
+    var permittedCurrency = [5, 10, 20, 50, 100, 500];
     var sum = 0;
     var paramPosition = 0;
     while(permittedCurrency.includes(arguments[paramPosition])){
