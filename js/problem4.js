@@ -35,6 +35,7 @@ function sumCurrency(){
     var permittedCurrency = [5, 10, 20, 50, 100, 500];
     var sum = 0;
     var paramPosition = 0;
+    console.log(arguments);
     while(permittedCurrency.includes(arguments[paramPosition])){
         sum += arguments[paramPosition];
         paramPosition++;
