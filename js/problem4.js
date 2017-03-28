@@ -26,4 +26,18 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function sumCurrency(){
+    var permittedCurrency = [5,10,20,50,100,500];
+    var sum = 0;
+    var paramPosition = 0;
+    while(permittedCurrency.includes(arguments[paramPosition])){
+        sum += arguments[paramPosition];
+        paramPosition++;
+    }
+
+    changeElementText("#currencySum", sum);
+}
